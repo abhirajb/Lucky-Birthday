@@ -1,6 +1,6 @@
 const varDate = document.querySelector("#datetxt");
 const varNumber = document.querySelector("#lucky-no");
-const outputMsg = document.querySelector("#msg");
+var outputMsg = document.querySelector("#msg");
 const btn= document.querySelector("#btn");
 
 btn.addEventListener("click",()=>parserCall());
@@ -9,13 +9,19 @@ function parserCall(){
 //console.log(varDate.value.replaceAll('-','0'));
 const removeHyphen = varDate.value.replaceAll('-','0');
 let sum=0;
-for(let ch of removeHyphen){
+for(var ch of removeHyphen){
     sum+=Number(ch);
-//console.log(sum);
+
 }
-if(sum%varNumber === 0){
+//console.log(sum.type);
+//const x =sum%varNumber.value;
+//console.log(x);
+if(sum%varNumber.value === 0){
+
     outputMsg.innerText = "Your b'day is lucky !!!!";
 }
 else{
-    outputMsg.innerText = "Your b'day is not lucky"}
+
+    outputMsg.innerText = "Your b'day is not lucky";
+}
 }
